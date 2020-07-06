@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect, useCallback} from 'react';
+
+import TopBar from './components/TopBar'
+import HeaderArea from './components/HeaderArea'
+import NewsGrid from './components/NewsGrid'
+
+import {GlobalProvider} from './context/GlobalContext';
+
+import {CssBaseline, Container} from '@material-ui/core'
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <CssBaseline/>
+      <GlobalProvider>
+        <TopBar/>
+        <Container maxWidth="lg">
+          <HeaderArea/>
+          <NewsGrid/>
+      </Container>
+    </GlobalProvider>
+    </>
   );
 }
 
