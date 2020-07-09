@@ -1,5 +1,7 @@
 import React from 'react';
-import {AppBar, Toolbar, IconButton, Typography} from '@material-ui/core';
+
+// Material-UI imports
+import {AppBar, Toolbar, IconButton, Typography, Switch, Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -12,16 +14,19 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         display: 'block',
-        /* [theme.breakpoints.up('sm')]: {
-        display: 'block',
-      }, */
     },
+    themeSwitch: {
+        width: 'auto',
+        marginLeft: 'auto'
+    }
 }));
 
-export default function TopBar(){
-    const classes = useStyles();
+export default React.memo(function TopBar({setDrawerOpen, darkMode, toggleDarkMode}){
 
+    const classes = useStyles();
+    
     return(
+
     <AppBar position="static">
         <Toolbar>
             <IconButton
@@ -29,13 +34,32 @@ export default function TopBar(){
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="open drawer"
+                onClick = {() => setDrawerOpen(true)}
             >
                 <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
                 News!
             </Typography>
+        
+            <Grid container alignItems="center" className={classes.themeSwitch}>
+                <Grid item>
+                    <Typography variant="caption">
+                        Light
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Switch size="small" checked={darkMode} onChange={() => toggleDarkMode(mode => !mode) }/>
+                </Grid>
+                <Grid item>
+                    <Typography variant="caption">
+                        Dark
+                    </Typography>
+                </Grid>
+
+           </Grid>
+            
         </Toolbar>
-    </AppBar>
+    </AppBar>  
     );
-}
+})

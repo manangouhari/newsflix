@@ -1,33 +1,33 @@
 import React, {useState, useContext} from 'react';
 import NewsItem from './NewsItem';
-import {GlobalContext} from '../context/GlobalContext'
-import {Grid, Fade, CircularProgress} from '@material-ui/core'
 
-export default () => {
-    const { NewsContext, LoadingContext } = useContext(GlobalContext)
-    const [news, setNews] = NewsContext;
-    const [loading, setLoading] = LoadingContext;
+import {NewsContext} from '../context/NewsContext';
+import {LoadingContext} from '../context/LoadingContext';
 
+import {Grid,  CircularProgress, Typography} from '@material-ui/core'
+
+export default React.memo(() => {
+    
+    const [news] = useContext(NewsContext);
+    const [loading] = useContext(LoadingContext);
     return(
         
-        <Grid container spacing={3} direction="column">
+        <Grid container spacing={3} >
         {loading && 
         (<Grid item style={{margin: 'auto'}}>
             <CircularProgress/>
         </Grid>)
         }
-        {!loading && news.map(
+        {(!loading && 
+        news.map(
             newsItem => (
-                <Grid item>
+                <Grid item xs={12} >
                     <NewsItem key={newsItem.link} {...newsItem}/>
                 </Grid>
             )
-        )}
-        
-        
+        ))}
         </Grid>
-        
-         
+            
         
     )
-}
+})
