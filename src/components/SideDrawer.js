@@ -26,21 +26,16 @@ export default React.memo(({open, setOpen}) => {
         <Drawer open={open} onClose={() => setOpen(false)} >
             <div className={classes.root}>
                 <RecentSearches setDrawerOpen={setOpen}/>
-                {/* <div className={classes.footer}>
+                <div className={classes.footer}>
                     <Divider/>
                     <div className={classes.footerContainer}>
                         <Typography variant="subtitle2">
-                            Made by Tejas and Manan.    
+                            Made by <Link href="https://github.com/tejasa97">Tejas</Link> and <Link href="https://github.com/manan2002">Manan</Link>.    
                             Want to contribute? <br/>
-                            <Link>
-                                Frontend - ReactJS
-                            </Link><br/>
-                            <Link>
-                                Backend - FastAPI
-                            </Link>
+                            
                         </Typography> 
                     </div>
-                </div> */}
+                </div> 
             </div>
         </Drawer>
     )
