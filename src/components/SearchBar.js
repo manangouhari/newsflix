@@ -19,6 +19,7 @@ export default React.memo(function ({handleSearch, query,setQuery}) {
     const handleChange = (e) => setQuery(e.target.value); 
     
     return (
+        <form onSubmit={handleSearch}>
         <Grid container spacing={1} style={{padding: '0'}}>
             <Grid item >
                 <TextField  label="Search news by topic" variant="outlined" size="small"
@@ -27,13 +28,14 @@ export default React.memo(function ({handleSearch, query,setQuery}) {
             </Grid>
             <Grid item>
                 <Button variant="contained" className={classes.searchBtn}
-                onClick={handleSearch}
                 color="primary"
+                type="submit"
                 >
                     <SearchIcon/>
                 </Button>
+
             </Grid>
         </Grid>
-        
+        </form>
     )
 })

@@ -22,7 +22,9 @@ export default React.memo(function(){
     const [news, fetchNews] = useContext(NewsContext);   
     const [heading, setHeading] = useContext(HeadingContext);   
     const [recentSearches, addSearch] = useContext(RecentContext);   
-    const handleSearch = useCallback(() => {
+    const handleSearch = useCallback((e) => {
+        console.log(e); 
+        e.preventDefault();
         if (query==='') return;
         fetchNews(query);
         addSearch(query)
