@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
-import {Paper, Typography, Link, Grid} from '@material-ui/core';
+import {Paper, Link, Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
