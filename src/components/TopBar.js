@@ -39,7 +39,7 @@ export default React.memo(function TopBar({setDrawerOpen, darkMode, toggleDarkMo
                 <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-                News!
+                Newsflick
             </Typography>
         
             <Grid container alignItems="center" className={classes.themeSwitch}>
