@@ -30,9 +30,7 @@ export default React.memo(({open, setOpen}) => {
                     <Divider/>
                     <div className={classes.footerContainer}>
                         <Typography variant="subtitle2">
-                            Made by <Link href="https://github.com/tejasa97">Tejas</Link> and <Link href="https://github.com/manan2002">Manan</Link>.    
-                            Want to contribute? <br/>
-                            
+                            Made by <Link href="https://github.com/tejasa97">Tejas</Link> and <Link href="https://github.com/manan2002">Manan</Link>.
                         </Typography> 
                     </div>
                 </div> 
