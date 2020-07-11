@@ -9,7 +9,7 @@ import SideDrawer from './components/SideDrawer';
 // Material-ui imports
 import {CssBaseline, Container} from '@material-ui/core'
 import {ThemeProvider, createMuiTheme, makeStyles} from '@material-ui/core/styles';
-import {pink, grey, blue} from '@material-ui/core/colors'
+import {pink, grey, blue, blueGrey} from '@material-ui/core/colors'
 
 // Context imports
 import {NewsProvider} from './context/NewsContext';
@@ -32,24 +32,35 @@ function App() {
     palette: {
       type: darkMode? 'dark': 'light',
       primary: {
-        main: darkMode ? blue[700]:blue[900]
+        main: darkMode ? blue[600] : grey[900]
       },
       secondary:{
-        main: pink[300]
+        main: darkMode ? grey[50]:grey[200] 
       },
       background: {
-        paper: darkMode?grey[800]: '#fff'
+        paper: darkMode?grey['A400']: '#fff'
       }
     },
     shape: {
       borderRadius: 3
+    }, typography: {
+      fontFamily: [
+        'Inter',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
     }
   });
   
   const useStyles = makeStyles((theme) => ({
     root: {
       minHeight: '100vh',
-      backgroundColor : darkMode?grey[900]:grey[50],
+      backgroundColor : darkMode? grey[900] : grey[50],
       color: theme.palette.getContrastText(darkMode ? grey[900] : grey[50])
     }
   }));

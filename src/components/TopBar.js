@@ -4,6 +4,8 @@ import React from 'react';
 import {AppBar, Toolbar, IconButton, Typography, Switch, Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness3Icon from '@material-ui/icons/Brightness3';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -38,26 +40,19 @@ export default React.memo(function TopBar({setDrawerOpen, darkMode, toggleDarkMo
             >
                 <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <Typography className={classes.title} variant="h5" noWrap>
                 Newsflick
             </Typography>
-        
-            <Grid container alignItems="center" className={classes.themeSwitch}>
-                <Grid item>
-                    <Typography variant="caption">
-                        Light
-                    </Typography>
-                </Grid>
-                <Grid item>
-                    <Switch size="small" checked={darkMode} onChange={() => toggleDarkMode(mode => !mode) }/>
-                </Grid>
-                <Grid item>
-                    <Typography variant="caption">
-                        Dark
-                    </Typography>
-                </Grid>
 
-           </Grid>
+            <div className={classes.themeSwitch}>
+                <IconButton onClick={() => toggleDarkMode(mode => !mode)}>
+                    {
+                            darkMode ? <Brightness7Icon color="secondary" /> : <Brightness3Icon color="secondary"/>
+                    }
+                    
+                </IconButton>
+            </div>
+            
             
         </Toolbar>
     </AppBar>  

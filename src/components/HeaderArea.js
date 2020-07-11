@@ -37,7 +37,7 @@ export default React.memo(function(){
         <Grid className={classes.root} container direction="column" spacing={2}>
             <Grid item xs={12}>
                 
-                <Typography variant="h6">{
+                <Typography variant="h5">{
                     heading===''?'General News': `News on "${heading}"`
                 }
                 </Typography>
