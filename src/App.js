@@ -32,10 +32,10 @@ function App() {
     palette: {
       type: darkMode? 'dark': 'light',
       primary: {
-        main: darkMode ? blue[600] : grey[900]
+        main: darkMode ? grey[200] : grey[900]
       },
       secondary:{
-        main: darkMode ? grey[50]:grey[200] 
+        main: darkMode ? grey[800]:grey[200] 
       },
       background: {
         paper: darkMode?grey['A400']: '#fff'

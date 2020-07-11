@@ -31,7 +31,7 @@ export default React.memo(({headline, link, source}) => {
                 <Grid item>
                     
                     <Link variant="body2" color="textSecondary">
-                        Source: {source}
+                        {source}
                     </Link>
                     
                 </Grid>
