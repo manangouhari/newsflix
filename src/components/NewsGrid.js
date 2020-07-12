@@ -6,7 +6,7 @@ import {LoadingContext} from '../context/LoadingContext';
 
 import {Grid,  CircularProgress, Typography} from '@material-ui/core'
 
-export default React.memo(() => {
+export default () => {
     
     const [news] = useContext(NewsContext);
     const [loading] = useContext(LoadingContext);
@@ -30,4 +30,4 @@ export default React.memo(() => {
             
         
     )
-})
+}

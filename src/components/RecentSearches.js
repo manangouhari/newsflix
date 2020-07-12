@@ -1,9 +1,9 @@
 import React, {useState, useContext} from 'react';
 
 // Material-UI imports
-import {List, ListItem, ListItemText, Typography} from '@material-ui/core';
+import {List, ListItem, ListItemText, ListItemSecondaryAction,Typography, IconButton} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-
+import DeleteIcon from '@material-ui/icons/Delete';
 // Context imports
 import {NewsContext} from '../context/NewsContext';
 import { HeadingContext } from '../context/HeadingContext';
@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default React.memo(({setDrawerOpen}) => {
-    const [searches, addSearch] = useContext(RecentContext);
+export default ({setDrawerOpen}) => {
+    const [searches, addSearch, deleteSearch] = useContext(RecentContext);
     const [news, fetchNews] = useContext(NewsContext);
     const [heading, setHeading] = useContext(HeadingContext);
     const classes = useStyles();
@@ -38,12 +38,17 @@ export default React.memo(({setDrawerOpen}) => {
         (<List>
             {
                 searches.map(searchTerm => (
-                    <ListItem button className={classes.listItem} onClick={() => { 
+                    <ListItem key={searchTerm} button className={classes.listItem} onClick={() => { 
                         fetchNews(searchTerm)
                         setHeading(searchTerm)
                         setDrawerOpen(false)
                     }}>
                         <ListItemText primary={searchTerm} />
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label="delete" onClick={() => {deleteSearch(searchTerm)}}>
+                                <DeleteIcon fontSize="small" />
+                            </IconButton>
+                        </ListItemSecondaryAction>
                     </ListItem>
 
                 ))
@@ -53,4 +58,4 @@ export default React.memo(({setDrawerOpen}) => {
         }
         </>
     )
-})
+}

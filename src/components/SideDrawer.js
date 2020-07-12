@@ -6,7 +6,7 @@ import RecentSearches from './RecentSearches';
 
 const useStlyes = makeStyles(theme => ({
     root: {
-        width: 200,
+        width: 240,
     }, 
     footer: {
         position: 'absolute',
@@ -19,7 +19,7 @@ const useStlyes = makeStyles(theme => ({
     }
 }))
 
-export default React.memo(({open, setOpen}) => {
+export default ({open, setOpen}) => {
     const classes = useStlyes();
     
     return(
@@ -30,11 +30,11 @@ export default React.memo(({open, setOpen}) => {
                     <Divider/>
                     <div className={classes.footerContainer}>
                         <Typography variant="subtitle2">
-                            Made by <Link href="https://github.com/tejasa97">Tejas</Link> and <Link href="https://github.com/manan2002">Manan</Link>.
+                            Made by <Link href="https://github.com/tejasa97" target="_blank">Tejas</Link> and <Link href="https://github.com/manan2002" target="_blank">Manan</Link>.
                         </Typography> 
                     </div>
                 </div> 
             </div>
         </Drawer>
     )
-})
+}

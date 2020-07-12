@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default React.memo(function ({handleSearch, query,setQuery}) {
+export default ({handleSearch, query,setQuery}) => {
     const classes = useStyles();
 
     const handleChange = (e) => setQuery(e.target.value); 
@@ -38,4 +38,4 @@ export default React.memo(function ({handleSearch, query,setQuery}) {
         </Grid>
         </form>
     )
-})
+}

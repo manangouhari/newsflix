@@ -15,9 +15,13 @@ export const RecentProvider = ({ children }) => {
          newSearches = (newSearches.length>5)? newSearches.slice(0,5): newSearches;
         setRecentSearch(newSearches)
     }
+
+    const deleteRecentSearch = (searchTerm) => {
+        setRecentSearch(recentSearches.filter(term => term !== searchTerm))
+    }
     
     return (
-        <RecentContext.Provider value={[recentSearches, addRecentSearch]}>
+        <RecentContext.Provider value={[recentSearches, addRecentSearch, deleteRecentSearch]}>
             {children}
         </RecentContext.Provider>
     )

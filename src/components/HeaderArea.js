@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default React.memo(function(){
+export default () => {
     
     
     const [query, setQuery] = useState('');
@@ -53,4 +53,4 @@ export default React.memo(function(){
         </Grid>
 
     )
-});
+}
