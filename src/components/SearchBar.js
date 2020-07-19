@@ -1,16 +1,19 @@
 import React from 'react';
 import {TextField, Button, Grid, IconButton} from '@material-ui/core'
+import { blue } from '@material-ui/core/colors'
 import { makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search';
 
 
 const useStyles = makeStyles((theme) => ({
     searchBtn: {
-        height: '100%'
+        height: '100%',
+        
     },
     bar: {
         width: '100%'
-    }
+    },
+
 }))
 
 export default ({handleSearch, query,setQuery}) => {

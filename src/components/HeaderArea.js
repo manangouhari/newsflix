@@ -39,7 +39,7 @@ export default () => {
         <Grid className={classes.root} container direction="row" justify="space-between" spacing={2}>
             <Grid item >
                 
-                <Typography variant="h5">{
+                <Typography variant="h6">{
                     heading===''?'General News': `News on "${heading}"`
                 }
                 </Typography>

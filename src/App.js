@@ -32,17 +32,17 @@ function App() {
     palette: {
       type: darkMode? 'dark': 'light',
       primary: {
-        main: darkMode ? grey[200] : grey[900]
+        main: darkMode ? blueGrey[100] : blueGrey[900]
       },
       secondary:{
-        main: darkMode ? grey[800]:grey[200] 
+        main: darkMode ? grey[800] :grey[100] 
       },
       background: {
         paper: darkMode?grey['A400']: '#fff'
       }
     },
     shape: {
-      borderRadius: 3
+      borderRadius: 2
     }, typography: {
       fontFamily: [
         'Inter',
