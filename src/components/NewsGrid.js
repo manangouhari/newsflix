@@ -6,7 +6,7 @@ import {LoadingContext} from '../context/LoadingContext';
 
 import {Grid,  CircularProgress, Typography} from '@material-ui/core'
 
-export default () => {
+export default React.memo(({darkMode}) => {
     
     const [news] = useContext(NewsContext);
     const [loading] = useContext(LoadingContext);
@@ -22,7 +22,7 @@ export default () => {
         news.map(
             newsItem => (
                 <Grid item xs={12} sm={6} md={4} >
-                    <NewsItem key={newsItem.link} {...newsItem}/>
+                    <NewsItem key={newsItem.link} {...newsItem} darkMode={darkMode}/>
                 </Grid>
             )
         ))}
@@ -30,4 +30,4 @@ export default () => {
             
         
     )
-}
+})

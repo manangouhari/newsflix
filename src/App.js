@@ -38,7 +38,8 @@ function App() {
         main: darkMode ? grey[800] :grey[100] 
       },
       background: {
-        paper: darkMode?grey['A400']: '#fff'
+        paper: darkMode?grey['A400']: '#fff' 
+        
       }
     },
     shape: {
@@ -54,13 +55,23 @@ function App() {
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(','),
-    }
+      h6: {
+        fontSize: '1.2rem'
+      },
+      body2: {
+        fontSize: '.9rem'
+      },
+      caption: {
+        fontSize: '.8rem',
+          
+      }
+    },
   });
   
   const useStyles = makeStyles((theme) => ({
     root: {
       minHeight: '100vh',
-      backgroundColor : darkMode? grey[900] : grey[50],
+      backgroundColor : darkMode? grey[900] : grey[50], 
       color: theme.palette.getContrastText(darkMode ? grey[900] : grey[50])
     }
   }));
@@ -79,7 +90,7 @@ function App() {
                 <SideDrawer open={isDrawerOpen} setOpen={handleDrawerOpen}/> 
                 <Container maxWidth="lg">
                   <HeaderArea/> 
-                  <NewsGrid/>
+                  <NewsGrid darkMode={darkMode}/>
                 </Container>  
                 
               </RecentProvider>

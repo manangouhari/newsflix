@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         display: 'block',
+        
     },
     themeSwitch: {
         width: 'auto',
@@ -40,7 +41,7 @@ export default React.memo(function TopBar({setDrawerOpen, darkMode, toggleDarkMo
             >
                 <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="h5" noWrap>
+            <Typography className={classes.title} variant="h6" noWrap>
                 Newsflick
             </Typography>
 

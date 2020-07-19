@@ -2,26 +2,29 @@ import React from 'react';
 
 import {Paper, Link, Grid, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core'
+import { blue, red } from '@material-ui/core/colors'
 
-const useStyles = makeStyles((theme) => ({
-    root:{
-        padding: theme.spacing(2),
-        height: '100%'
-    },
-    grid: {
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'space-between', 
-        height: '100%'
-    },
-    source: {
-        marginTop: '.4rem'
-    }
-}))
 
-export default ({headline, link, source}) => {
+export default React.memo(({headline, link, source, darkMode}) => {
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            padding: theme.spacing(2),
+            height: '100%',
+            borderLeft: `2px solid ${darkMode? blue[300]: blue[500]}`
+        },
+        grid: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            height: '100%'
+        },
+        source: {
+            marginTop: '.4rem'
+        }
+    }))
+
     const classes = useStyles();
-    
     
     return (
         <Paper className={classes.root} elevation={2}>
@@ -35,4 +38,4 @@ export default ({headline, link, source}) => {
             </div>
         </Paper>
     )
-}
+})
