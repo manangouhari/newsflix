@@ -21,7 +21,7 @@ export default () => {
         {(!loading && 
         news.map(
             newsItem => (
-                <Grid item xs={12} >
+                <Grid item xs={12} sm={6} md={4} >
                     <NewsItem key={newsItem.link} {...newsItem}/>
                 </Grid>
             )

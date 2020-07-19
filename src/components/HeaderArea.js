@@ -1,4 +1,4 @@
-import React, {useContext, useState, useCallback} from 'react';
+import React, {useContext, useState, useCallback, useMemo} from 'react';
 import SearchBar from './SearchBar';
 import {NewsContext} from '../context/NewsContext';
 import { HeadingContext } from '../context/HeadingContext';
@@ -32,18 +32,21 @@ export default () => {
         setQuery('');
     }, [query]);       
     
+    
+
     const classes = useStyles();
     return (
-        <Grid className={classes.root} container direction="column" spacing={2}>
-            <Grid item xs={12}>
+        <Grid className={classes.root} container direction="row" justify="space-between" spacing={2}>
+            <Grid item >
                 
                 <Typography variant="h5">{
                     heading===''?'General News': `News on "${heading}"`
                 }
                 </Typography>
+                
 
             </Grid>
-            <Grid item xs={12}>
+            <Grid item>
                 <SearchBar 
                     handleSearch={handleSearch}
                     query={query}

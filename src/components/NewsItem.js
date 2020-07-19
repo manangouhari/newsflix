@@ -6,13 +6,17 @@ import {makeStyles} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     root:{
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        height: '100%'
     },
-    grow: {
-        flexGrow:1
+    grid: {
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'space-between', 
+        height: '100%'
     },
-    iconButon: {
-        marginLeft: 'auto'
+    source: {
+        marginTop: '.8rem'
     }
 }))
 
@@ -21,21 +25,15 @@ export default ({headline, link, source}) => {
     
     
     return (
-        <Paper className={classes.root} elevation={3}>
-            <Grid container direction="column" spacing={1}>
-                <Grid item className={classes.grow}>
-                    <Link variant="body1" color="textPrimary" href={link} target="_blank">
+        <Paper className={classes.root} elevation={2}>
+            <div className={classes.grid}>
+                <Link variant="body1" color="textPrimary" href={link} target="_blank">
                     {headline}
-                    </Link>
-                </Grid>
-                <Grid item>
-                    
-                    <Typography variant="body2" color="textSecondary">
-                        {source}
-                    </Typography>
-                    
-                </Grid>
-            </Grid>
+                </Link>
+                <Typography variant="body2" color="textSecondary" className={classes.source}>
+                    {source}
+                </Typography>
+            </div>
         </Paper>
     )
 }
